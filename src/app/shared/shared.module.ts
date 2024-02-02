@@ -4,7 +4,7 @@ import { BreadCrumComponent } from './bread-crum/bread-crum.component';
 import { BarraNavegacionComponent } from './barra-navegacion/barra-navegacion.component';
 import{ButtonModule } from 'primeng/button';
 import{BreadcrumbModule} from 'primeng/breadcrumb';
-
+import{DockModule} from 'primeng/dock';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import{BreadcrumbModule} from 'primeng/breadcrumb';
   exports:[BarraNavegacionComponent,BreadCrumComponent],
   imports: [
     CommonModule,BreadcrumbModule,
-    ButtonModule
+    ButtonModule,
+    DockModule
   ]
 })
 export class SharedModule { }
