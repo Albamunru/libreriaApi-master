@@ -1,2 +1,33 @@
-<p>libros works!</p>
 
+<div class="animate__animated animate__fadeIn animate__faster">
+  <app-barra-cierre></app-barra-cierre>
+  <div class="container">
+      <div class="card__v" *ngFor="let cadaLibro of listaLibro">
+          <p-card>
+              <ng-template pTemplate="header">
+                  <img src={{cadaLibro.ImgNombre}} alt="Imagen no cargada"/>
+                  <span style="font-weight: bold">{{cadaLibro.Nombre}}</span>
+              </ng-template>
+              <p>Autor: {{cadaLibro.Autor}}</p>
+              <!--<p>Editorial: {{cadaLibro.Editorial}}</p>-->
+              <p>Edición: {{cadaLibro.Edicion}}</p>
+              <p>Formato: {{cadaLibro.Formato|uppercase}}</p>
+              <p>Precio: {{cadaLibro.Precio}} €</p>
+              <p>ISBN: {{cadaLibro.ISBN}}</p>
+              <ng-template pTemplate="footer">
+                  Cantidad: {{cadaLibro.Cantidad}}
+              </ng-template>
+              
+          </p-card>
+         
+      </div>
+     
+  </div>
+  <div class="position__btn__nuevolibro">
+    
+    <button 
+    pButton
+    [routerLink]="['/main/nuevo-libro']"
+     label="Libro" icon="pi pi-plus" class="p-button-success"></button>
+</div>
+</div>

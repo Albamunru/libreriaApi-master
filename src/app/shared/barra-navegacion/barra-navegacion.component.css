@@ -1,0 +1,11 @@
+.custom-dock {
+    display: flex;
+    justify-content: space-between; 
+  
+    padding: 10px; /
+}
+
+.custom-dock img {
+    margin-right: 10px; 
+}
+

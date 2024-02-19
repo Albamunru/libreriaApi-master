@@ -1,0 +1,40 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <app-barra-cierre></app-barra-cierre>
+    <div class="container">
+    
+        <div>
+            <div class="card_autor" *ngFor="let cadaEdicion of listaEdiciones">
+                <div class="clasePrueba">
+                    <img src="assets/iconos/edicion.png" alt="Imagen no cargada"/>
+                    <p>{{cadaEdicion.nombre |titlecase}}</p>
+                   
+                    <div class="btn__form">
+                        <p-button 
+                
+                         [outlined]="true"
+                         icon="pi pi-pencil"
+                          severity="success">
+                        </p-button>
+                        <p-button 
+                         (click)="deleteEdiciones(cadaEdicion)"
+                         [outlined]="true"
+                          severity="danger"
+                          icon="pi pi-trash"></p-button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    
+    </div>
+    <div class="position__btn__nuevoAutor">
+    
+        <button 
+        pButton
+       
+         label="Edicion" icon="pi pi-plus" class="p-button-success"></button>
+    </div>
+    </div>
+    

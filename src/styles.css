@@ -135,5 +135,39 @@ table {
 border-collapse: collapse;
 border-spacing: 0;
 }
+.container{
+     width: 100%;
+     min-height: 75vh;
+     max-height: 75vh;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     overflow: auto;
+     background-color:aliceblue;
+  border-start-end-radius: 4px;
+  border-end-start-radius: 4px;  
+}
 
+.position__img{
+  margin-top: 40px;
+margin-left: 40px;
+}
 
+.libro__img{
+  width: 40%;
+  
+  height: auto;
+  cursor: pointer;
+}
+
+.container__form{
+  text-align: center;
+  margin-top: 50px;
+}
+.p_input_group{
+  display: flex;
+  align-items: center;
+}
+.p-inputgroup-addon{
+  margin-left: 10px;
+}

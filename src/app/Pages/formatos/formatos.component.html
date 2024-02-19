@@ -1,0 +1,38 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+    <app-barra-cierre></app-barra-cierre>
+    <div class="container">
+    
+        <div>
+            <div class="card_autor" *ngFor="let cadaFormato of listaFormatos">
+                <div class="clasePrueba">
+                    <img src="assets/iconos/formato.png" alt="Imagen no cargada"/>
+                    <p>{{cadaFormato.nombre |titlecase}}</p>
+                   
+                    <div class="btn__form">
+                        <p-button 
+                
+                         [outlined]="true"
+                         icon="pi pi-pencil"
+                          severity="success">
+                        </p-button>
+                        <p-button 
+                         [outlined]="true"
+                          (click)="deleteFormatos(cadaFormato)"
+                          severity="danger"
+                          icon="pi pi-trash"></p-button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    
+    </div>
+    <div class="position__btn__nuevoFormato">
+    
+        <button 
+        pButton
+        label="Formato" icon="pi pi-plus" class="p-button-success"></button>
+    </div>
+    </div>

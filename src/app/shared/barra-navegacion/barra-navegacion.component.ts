@@ -35,7 +35,29 @@ constructor(private router:Router){
     command:()=>{
       this.router.navigateByUrl("main/temas");
     }
-    }]
+    },
+
+
+    {
+      Label:"Ediciones",
+      icon:"../../assets/iconos/editarLibro.png",
+      command:()=>{
+        this.router.navigateByUrl("main/ediciones");
+      }
+      },
+
+      {
+        Label:"Formatos",
+        icon:"../../assets/iconos/nuevosLibros.png",
+        command:()=>{
+          this.router.navigateByUrl("main/formatos");
+        }
+        },
+  
+  
+  
+  
+  ]
      }
     
     

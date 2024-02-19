@@ -7,20 +7,40 @@ import { TemasComponent } from './temas/temas.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { ComponentsModule } from './../components/components.module';
+import { ButtonModule } from 'primeng/button';
+import {CardModule} from 'primeng/card';
+import { NuevoLibroComponent } from './nuevo-libro/nuevo-libro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import{DropdownModule} from 'primeng/dropdown';
+import { FormatosComponent } from './formatos/formatos.component';
+import { EdicionesComponent } from './ediciones/ediciones.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     MainPageComponent,
     LibrosComponent,
     AutoresComponent,
-    TemasComponent
+    TemasComponent,
+    NuevoLibroComponent,
+    FormatosComponent,
+    EdicionesComponent,
+    HomeComponent
   ],
  
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    ComponentsModule,
+    CardModule,
+    ButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DropdownModule
+    
+  
+  
     
 
   ],

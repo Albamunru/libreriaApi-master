@@ -1,5 +1,17 @@
+<!---
 <p-dock  [model]="navBar" [position]="'bottom'">
     <ng-template pTemplate="item" let-item>
         <img [src]="item.icon" [alt]="item.label" width="100%" />
     </ng-template>
+</p-dock> -->
+
+<p-dock [model]="navBar" [position]="'bottom'" class="custom-dock">
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.icon" [alt]="item.label" width="50" height="50" [pTooltip]="item.Label" />
+    </ng-template>
 </p-dock>
+
+
+
+
+
