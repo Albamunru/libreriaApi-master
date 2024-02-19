@@ -12,6 +12,7 @@ export class BarraNavegacionComponent {
   navBar: MenuItem[]=[];
 constructor(private router:Router){
   
+  
 }
   ngOnInit(): void {
     this.navBar= 
