@@ -6,8 +6,9 @@
           <p-card>
               <ng-template pTemplate="header">
                   <img src={{cadaLibro.ImgNombre}} alt="Imagen no cargada"/>
-                  <span style="font-weight: bold">{{cadaLibro.Nombre}}</span>
-              </ng-template>
+                  <p style="font-weight: bold; text-wrap: wrap; text-overflow: ellipsis; overflow: hidden;
+                  white-space: nowrap;" >{{cadaLibro.Nombre}}</p>
+              </ng-template> 
               <p>Autor: {{cadaLibro.Autor}}</p>
               <!--<p>Editorial: {{cadaLibro.Editorial}}</p>-->
               <p>Edición: {{cadaLibro.Edicion}}</p>
