@@ -3,20 +3,28 @@
 <div class="container">
 
 <div class="container__img">
-<img 
+<!--<img 
 *ngIf="!imgTemp"
 class="libro__img position__img"
 src="assets/iconos/libroRosa.jpg" alt="Producto"
-/>
+/
 
-<img *ngIf="imgTemp" src="imgTemp" class="libro__img position__img"  />
-<input
-type="file"
+<img *ngIf="FormsLibro.get('imagen')?.value" [src]="FormsLibro.get('imagen')?.value" alt="Imagen Previa Libro">
 
-style="padding-left: 2.5rem;"
-/>
+>-->
+
+
+<img [src]="imgTemp"  width="200px" height="210px" class="libro__img position__img"  />
 
 </div>
+
+
+
+
+
+
+
+ 
 
 <!--form-->
 
@@ -24,10 +32,11 @@ style="padding-left: 2.5rem;"
 <form [formGroup]="libroFormulario">
 <!--Inputs group-->    
     <div class="input__group">
+  
     <div class="group__a">
 
         <!--Input-->
-     <div>   
+<div>   
       <div class="p_input_group">
         <span class="p-inputgroup-addon"
         ><i class="pi pi-book"></i
@@ -37,13 +46,32 @@ style="padding-left: 2.5rem;"
             pInputText
             placeholder="Nombre"
             formControlName="nombre"  />
-</div>
+        </div>
 <div *ngIf="isValidField('nombre')">
     <p style="color: rgb(255, 0,0)">Campo requerido</p>
 </div>
 </div>
 
 <!--Input ISBN-->
+
+    <div class="p_input_group">
+        <span class="p-inputgroup-addon">
+
+            <i class="pi pi-globe"></i>
+        </span>
+        <input #inputImg (change)="changeImg()"
+        type="text"
+        pInputText
+        class="ng-invalid ng-dirty"
+        placeholder="  URL"
+        formControlName="ImgNombre"
+         />
+    </div>
+    <div
+    *ngIf="isValidField('URL')">
+    <p style="color:red">Campo requerido</p>
+    </div>
+
 
 <div>
     <div class="p_input_group">

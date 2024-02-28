@@ -14,14 +14,12 @@
     height: 75vh;
 }
 
-.position__img {
-    margin-top: 40px;
-    margin-left: 40px;
-}
+
 
 .libro__img {
-    width: 80%;
-    height: 80%;
+    height:80%;
+    width: 100%;
+
     cursor: pointer;
 }
 

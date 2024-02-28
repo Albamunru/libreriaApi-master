@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { AutoresService } from '../../services/autores.service';
 import { Autor } from '../../model/autor.model';
@@ -11,6 +11,8 @@ import { EdicionService } from '../../services/edicion.service';
 import { Libro } from '../../model/libros.model';
 import { LibrosService } from '../../services/libros.service';
 import { FileUploadService } from '../../services/file.upload.service';
+import { CLIENT_RENEG_LIMIT } from 'node:tls';
+import { log } from 'node:console';
 
 
  
@@ -24,7 +26,7 @@ export class NuevoLibroComponent implements OnInit {
   libroFormulario:FormGroup
   private pulsadoBtnGuardar:boolean=false
   
-
+  @ViewChild("inputImg") imgInput : ElementRef | undefined;
   listaAutores:Autor[]=[];
   listaTemas:Temas[]=[];
   listaFormatos:Formato[]=[];
@@ -35,9 +37,9 @@ export class NuevoLibroComponent implements OnInit {
   
   
 public imgUpload:File|any
-public imgTemp:string|ArrayBuffer|any=null
+public imgTemp:string|any="../../../assets/iconos/librodefecto.jpg"
   
-  constructor(private fb:FormBuilder,private autoresService:AutoresService,private temasService:TemasService,private formatoService:FormatoService, private edicionService:EdicionService,private librosService:LibrosService, private uploadService:FileUploadService) {
+  constructor(private fb:FormBuilder,private autoresService:AutoresService,private temasService:TemasService,private formatoService:FormatoService, private edicionService:EdicionService,private librosService:LibrosService) {
 this.libroFormulario=this.fb.group({
   
 })
@@ -58,6 +60,7 @@ this.libroFormulario=this.fb.group({
      edicion:["Edicion",Validators.required],
      formato:["Formato",Validators.required],
      tema:["Tema",Validators.required],
+     ImgNombre:[""],
    })
 
    
@@ -119,9 +122,17 @@ public async obtenerTemas(){
   this.librosService.putLibros(this.libroFormulario.value).subscribe((respuesta)=>{
    console.log(this.libroFormulario.value)
     console.log(respuesta)
+    
   }
 
   )
+    window.location.href="http://localhost:4200/main/libros";  
+  }
+
+
+  changeImg(){
+    this.imgTemp=this.imgInput?.nativeElement.value
+    console.log(this.imgTemp);
     
   }
 

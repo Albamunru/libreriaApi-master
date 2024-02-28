@@ -16,6 +16,7 @@ import{DropdownModule} from 'primeng/dropdown';
 import { FormatosComponent } from './formatos/formatos.component';
 import { EdicionesComponent } from './ediciones/ediciones.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     MainPageComponent,
@@ -37,7 +38,9 @@ import { HomeComponent } from './home/home.component';
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    DropdownModule
+    DropdownModule,
+    BrowserAnimationsModule
+  
     
   
   
